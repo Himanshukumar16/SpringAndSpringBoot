@@ -19,7 +19,9 @@ class Main{
         </dependency>
     </dependencies>
 
+    In Maven, an archetype is basically a template for generating a new project.
 
+    Maven completes here !!....
  */
     }
 }
