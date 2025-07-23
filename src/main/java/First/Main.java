@@ -1,6 +1,6 @@
 package First;
 import java.sql.*;
-class Main{
+class Main {
     public static void main(String[] args) throws SQLException {
 /*
     steps to connect :
@@ -40,7 +40,7 @@ class Main{
 
         Statement st = con.createStatement();
 
-//        ResultSet res = st.executeQuery("select salary from salary where id < 106;");
+//        ResultSet res = st.executeQuery("select * from emp;");
 //        res.next();
 //      System.out.println(res.getString("name")); //prints only first record.
 //
@@ -48,7 +48,13 @@ class Main{
 //            System.out.println(res.getString("salary"));
 //        }
 
-
-
+        st.execute("update emp set name = 'Anubhav' where name = 'Himanshu'");
+        ResultSet res = st.executeQuery("select * from emp;");
+        while (res.next()) {
+            System.out.print("id :");
+            System.out.print(res.getInt("id"));
+            System.out.print(" name :");
+            System.out.println(res.getString("name"));
+        }
     }
 }
