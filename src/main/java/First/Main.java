@@ -39,13 +39,16 @@ class Main{
         System.out.println("Connection established");
 
         Statement st = con.createStatement();
-        ResultSet res = st.executeQuery("select name from emp where id < 106;");
+
+//        ResultSet res = st.executeQuery("select salary from salary where id < 106;");
 //        res.next();
 //      System.out.println(res.getString("name")); //prints only first record.
+//
+//        while(res.next()){
+//            System.out.println(res.getString("salary"));
+//        }
 
-        while(res.next()){
-            System.out.println(res.getString("name"));
-        }
+
 
     }
 }
