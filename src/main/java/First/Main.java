@@ -48,7 +48,7 @@ class Main {
 //            System.out.println(res.getString("salary"));
 //        }
 
-        st.execute("update emp set name = 'Anubhav' where name = 'Himanshu'");
+        st.execute("delete from emp where name = 'Sibu';");
         ResultSet res = st.executeQuery("select * from emp;");
         while (res.next()) {
             System.out.print("id :");
