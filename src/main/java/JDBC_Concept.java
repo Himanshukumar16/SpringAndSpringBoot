@@ -1,5 +1,3 @@
-package First;
-
 import java.sql.*;
 public class JDBC_Concept {
     public static void main(String[] args) throws SQLException {
