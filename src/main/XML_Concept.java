@@ -1,4 +1,4 @@
-public class XML_Concept {
+//public class XML_Concept {
     /*
     XML terms :->
         groupID Should be unique.
@@ -20,5 +20,4 @@ public class XML_Concept {
 
     Maven completes here !!....
  */
-
-}
+//}

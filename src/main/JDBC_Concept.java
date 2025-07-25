@@ -1,6 +1,5 @@
-import java.sql.*;
-public class JDBC_Concept {
-    public static void main(String[] args) throws SQLException {
+//import java.sql.*;
+//public class JDBC_Concept {
 /*
     steps to connect :
 
@@ -26,19 +25,19 @@ public class JDBC_Concept {
 
 //      for writing url :- javaConnectigToWhat:JDBC_WillConnectWith://portNumberOf_DBMS_Using/DatabaseName
 
-            String url = "jdbc:mysql://localhost:3306/practice";// for postgresql portnumber is 5432 for mysql portnumber is 3306.
-            String user = "root";
-            String pass = "1234";
-
-            Connection con;
-            try {
-                con = DriverManager.getConnection(url, user, pass);
-            } catch (SQLException e) {
-                throw new RuntimeException(e);
-            }
-            System.out.println("Connection established");
-
-            Statement st = con.createStatement();
+//            String url = "jdbc:mysql://localhost:3306/practice";// for postgresql portnumber is 5432 for mysql portnumber is 3306.
+//            String user = "root";
+//            String pass = "1234";
+//
+//            Connection con;
+//            try {
+//                con = DriverManager.getConnection(url, user, pass);
+//            } catch (SQLException e) {
+//                throw new RuntimeException(e);
+//            }
+//            System.out.println("Connection established");
+//
+//            Statement st = con.createStatement();
 
 //        ResultSet res = st.executeQuery("select * from emp;");
 //        res.next();
@@ -65,5 +64,4 @@ public class JDBC_Concept {
 //            pst.execute();
 //
 //            System.out.println("changes done !");
-    }
-}
+//}
