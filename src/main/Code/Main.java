@@ -5,21 +5,18 @@ import org.hibernate.cfg.Configuration;
 
 public class Main {
     public static void main(String[] args) {
-        Students s1 = new Students();
-        s1.setSid(6);
-        s1.setSname("Sibu");
-        s1.setSgpa(7.90);
 
-        Configuration con = new Configuration();
-        con.addAnnotatedClass(Students.class);
-        con.configure();
-        SessionFactory sf = con.buildSessionFactory();
+        SessionFactory sf = new Configuration()
+                .addAnnotatedClass(Students.class)
+                .configure()
+                .buildSessionFactory();
+
         Session s = sf.openSession();
-        Transaction tr = s.beginTransaction();
-        s.persist(s1);
-        tr.commit();
 
+        Students detail = s.get(Students.class,4);
         s.close();
         sf.close();
+
+        System.out.println(detail.getSname()+" : "+detail.getSgpa());
     }
 }

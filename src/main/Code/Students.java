@@ -8,12 +8,6 @@ public class Students {
     private String sname;
     private double sgpa;
 
-//    public Students(int sid,String sname , double sgpa) {
-//        this.sid = sid;
-//        this.sname = sname;
-//        this.sgpa = sgpa;
-//    }
-
     public int getSid() {
         return sid;
     }
