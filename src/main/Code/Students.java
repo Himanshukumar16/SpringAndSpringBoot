@@ -1,12 +1,17 @@
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 
 @Entity
 public class Students {
     @Id
+    @Column(name = "Student_id")
     private int sid;
+    @Column(name = "Student_Name")
     private String sname;
+    @Column(name = "Student_CGPA")
     private double sgpa;
+    private Subjects subject;
 
     public int getSid() {
         return sid;

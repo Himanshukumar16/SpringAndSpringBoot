@@ -8,7 +8,6 @@ public class Main {
 
         Students s1 = new Students();
 
-        s1.setSid(6);
 
         SessionFactory sf = new Configuration()
                 .addAnnotatedClass(Students.class)
@@ -16,17 +15,10 @@ public class Main {
                 .buildSessionFactory();
 
         Session s = sf.openSession();
-        Students detail = null;
 
         Transaction tr = s.beginTransaction();
-        s.remove(s1);
+
         tr.commit();
-
-        for(int i = 1; i <= 5; i++){
-
-            detail = s.get(Students.class,i);
-            System.out.println(detail.getSname()+" : "+detail.getSgpa());
-        }
 
         s.close();
         sf.close();
