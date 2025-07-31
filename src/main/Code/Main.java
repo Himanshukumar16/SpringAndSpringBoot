@@ -6,9 +6,6 @@ import org.hibernate.cfg.Configuration;
 public class Main {
     public static void main(String[] args) {
 
-        Students s1 = new Students();
-
-
         SessionFactory sf = new Configuration()
                 .addAnnotatedClass(Students.class)
                 .configure()
