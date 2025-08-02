@@ -11,14 +11,19 @@ public class Students {
     private String sname;
     @Column(name = "Student_CGPA")
     private double sgpa;
-    private Subjects subject;
+//    private Subjects subject;
+
+
+    public void setSid(int sid) {
+        this.sid = sid;
+    }
 
     public int getSid() {
         return sid;
     }
 
-    public void setSid(int sid) {
-        this.sid = sid;
+    public double getSgpa() {
+        return sgpa;
     }
 
     public String getSname() {
@@ -29,16 +34,12 @@ public class Students {
         this.sname = sname;
     }
 
-    public double getSgpa() {
-        return sgpa;
-    }
-
     public void setSgpa(double sgpa) {
         this.sgpa = sgpa;
     }
 
     @Override
     public String toString() {
-        return "Students{" + "sid=" + sid + ", sname='" + sname + '\'' + ", sgpa=" + sgpa + '}';
+        return "[" + "ID=" + sid + ", Name='" + sname + '\'' + ", CGPA=" + sgpa + ']';
     }
 }
