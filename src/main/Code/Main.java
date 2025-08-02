@@ -13,7 +13,7 @@ import java.util.*;
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        Students s1 = new Students();
+
 
         SessionFactory sf = new Configuration()
                 .addAnnotatedClass(Students.class)
@@ -27,9 +27,9 @@ public class Main {
 //        System.out.println("Enter number of input you want to enter !");
 //        int n = sc.nextInt();
 
-        int sid = 0;
-        String sname = null;
-        double sgpa = 0.0;
+//        int sid = 0;
+//        String sname = null;
+//        double sgpa = 0.0;
 
 //        for (int i = 0; i < n; i++) {
 //
@@ -47,12 +47,13 @@ public class Main {
 //            s.merge(s1);
 //        }
 
-        TypedQuery<Students> query = s.createQuery("FROM Students ORDER BY sgpa DESC", Students.class);
-        List<Students> list = query.getResultList();
+//        TypedQuery<Students> query = s.createQuery("FROM Students ORDER BY sgpa DESC", Students.class);
+//        List<Students> list = query.getResultList();
+//
+//        for(Students std : list){
+//            System.out.println(std.toString());
+//        }
 
-        for(Students std : list){
-            System.out.println(std.toString());
-        }
         tr.commit();
 
         s.close();
