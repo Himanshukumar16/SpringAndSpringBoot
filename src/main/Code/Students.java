@@ -1,6 +1,7 @@
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToOne;
 
 @Entity
 public class Students {
@@ -11,7 +12,8 @@ public class Students {
     private String sname;
     @Column(name = "Student_CGPA")
     private double sgpa;
-//    private Subjects subject;
+    @OneToOne
+    private Subjects subject;
 
 
     public void setSid(int sid) {

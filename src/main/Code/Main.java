@@ -14,9 +14,12 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
+        Students stu = new Students();
+        Subjects sub = new Subjects();
 
         SessionFactory sf = new Configuration()
                 .addAnnotatedClass(Students.class)
+                .addAnnotatedClass(Subjects.class)
                 .configure()
                 .buildSessionFactory();
 
@@ -54,6 +57,12 @@ public class Main {
 //            System.out.println(std.toString());
 //        }
 //
+
+        sub.setCid(2);
+        sub.setCourse("AIML");
+        sub.setCourseId(502);
+
+        s.persist(sub);
 
         tr.commit();
 
