@@ -8,13 +8,20 @@ import org.hibernate.cfg.Configuration;
 public class Main {
     public static void main(String[] args) {
         Aliens a = new Aliens();
+        Laptop l1 = new Laptop();
+        l1.setLname("Dell");
+        l1.setLram(32);
+        l1.setLmodel("Dell-123");
+        l1.setLid(1);
 
         a.setAid(101);
         a.setAname("Himanshu");
         a.setAtech("Java");
+        a.setLaptop(l1);
 
         SessionFactory sf = new Configuration()
                             .addAnnotatedClass(Aliens.class)
+                            .addAnnotatedClass(Laptop.class)
                             .configure()
                             .buildSessionFactory();
 
@@ -28,6 +35,7 @@ public class Main {
 //        u2 = s.find(University.class,5);// find in database.
 //        s.remove(u2);//delete.
         s.persist(a);
+        s.persist(l1);
 
         t.commit();
 
