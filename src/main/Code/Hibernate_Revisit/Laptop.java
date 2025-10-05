@@ -1,8 +1,7 @@
 package Hibernate_Revisit;
 
-import jakarta.persistence.Embeddable;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+import java.util.List;
 
 //@Embeddable
 @Entity
@@ -12,6 +11,8 @@ public class Laptop {
     private String lname;
     private String lmodel;
     private int lram;
+    @ManyToMany(mappedBy = "laptop")
+    private List<Aliens> alien;
 
     public int getLid() {
         return lid;
@@ -43,6 +44,14 @@ public class Laptop {
 
     public void setLram(int lram) {
         this.lram = lram;
+    }
+
+    public List<Aliens> getAlien() {
+        return alien;
+    }
+
+    public void setAlien(List<Aliens> alien) {
+        this.alien = alien;
     }
 
     @Override

@@ -1,8 +1,8 @@
 package Hibernate_Revisit;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToOne;
+import jakarta.persistence.*;
+
+import java.util.List;
 
 @Entity
 public class Aliens {
@@ -11,8 +11,8 @@ public class Aliens {
     private int aid;
     private String aname;
     private String atech;
-    @OneToOne
-    private Laptop laptop;
+    @ManyToMany
+    private List<Laptop> laptop;
 
     public int getAid() {
         return aid;
@@ -38,11 +38,11 @@ public class Aliens {
         this.atech = atech;
     }
 
-    public Laptop getLaptop() {
+    public List<Laptop> getLaptop() {
         return laptop;
     }
 
-    public void setLaptop(Laptop laptop) {
+    public void setLaptop(List<Laptop> laptop) {
         this.laptop = laptop;
     }
 
@@ -52,7 +52,7 @@ public class Aliens {
                 "aid=" + aid +
                 ", aname='" + aname + '\'' +
                 ", atech='" + atech + '\'' +
-                ", laptop=" + laptop +
+//                ", laptop=" + laptop +
                 '}';
     }
 }
