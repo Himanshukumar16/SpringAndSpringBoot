@@ -9,21 +9,16 @@ import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
+
         Aliens a1 = new Aliens();
-        Aliens a = new Aliens();
-        Aliens a2 = new Aliens();
-
-        a.setAid(101);
-        a.setAname("Himanshu");
-        a.setAtech("Java");
-
         a1.setAid(102);
         a1.setAname("Anurag");
         a1.setAtech("Java");
 
-        a2.setAid(103);
-        a2.setAname("Ritika");
-        a2.setAtech("Biology");
+        Aliens a = new Aliens();
+        a.setAid(101);
+        a.setAname("Himanshu");
+        a.setAtech("Java");
 
         Laptop l1 = new Laptop();
         l1.setLname("Dell");
@@ -43,13 +38,12 @@ public class Main {
         l3.setLmodel("I-pad");
         l3.setLid(3);
 
-        l3.setAlien(Arrays.asList(a,a2));
-        l1.setAlien(Arrays.asList(a,a1));
-        l2.setAlien(Arrays.asList(a,a1,a2));
+//        l3.setAlien(Arrays.asList(a,a2));
+//        l1.setAlien(Arrays.asList(a,a1));
+//        l2.setAlien(Arrays.asList(a,a1,a2));
 
-        a.setLaptop(Arrays.asList(l1,l2,l3));
-        a1.setLaptop(Arrays.asList(l1,l2));
-        a2.setLaptop(Arrays.asList(l2,l3));
+        a.setLaptop(Arrays.asList(l1,l2));
+        a1.setLaptop(Arrays.asList(l3));
 
         SessionFactory sf = new Configuration()
                 .addAnnotatedClass(Aliens.class)
@@ -68,7 +62,6 @@ public class Main {
 //        s.remove(u2);//delete.
         s.persist(a);
         s.persist(a1);
-        s.persist(a2);
         s.persist(l1);
         s.persist(l2);
         s.persist(l3);
@@ -79,7 +72,13 @@ public class Main {
 //        System.out.println(u3);
 
         s.close();
-        sf.close();
 
+        Session ses = sf.openSession();
+        Aliens per = ses.get(Aliens.class,102);
+
+        System.out.println(per);
+
+        ses.close();
+        sf.close();
     }
 }

@@ -1,6 +1,7 @@
 package Hibernate_Revisit;
 
 import jakarta.persistence.*;
+import org.hibernate.sql.results.graph.Fetch;
 
 import java.util.List;
 
@@ -11,7 +12,9 @@ public class Aliens {
     private int aid;
     private String aname;
     private String atech;
-    @ManyToMany
+//    @ManyToMany
+//    private List<Laptop> laptop;
+    @OneToMany
     private List<Laptop> laptop;
 
     public int getAid() {

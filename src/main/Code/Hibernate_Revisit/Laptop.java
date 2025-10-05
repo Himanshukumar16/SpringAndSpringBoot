@@ -11,8 +11,6 @@ public class Laptop {
     private String lname;
     private String lmodel;
     private int lram;
-    @ManyToMany(mappedBy = "laptop")
-    private List<Aliens> alien;
 
     public int getLid() {
         return lid;
@@ -46,13 +44,13 @@ public class Laptop {
         this.lram = lram;
     }
 
-    public List<Aliens> getAlien() {
-        return alien;
-    }
-
-    public void setAlien(List<Aliens> alien) {
-        this.alien = alien;
-    }
+//    public List<Aliens> getAlien() {
+//        return alien;
+//    }
+//
+//    public void setAlien(List<Aliens> alien) {
+//        this.alien = alien;
+//    }
 
     @Override
     public String toString() {
