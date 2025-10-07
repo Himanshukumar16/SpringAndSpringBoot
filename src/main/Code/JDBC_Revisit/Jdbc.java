@@ -13,6 +13,7 @@ public class Jdbc {
             Connection con = DriverManager.getConnection(url, "postgres", "1234");
             System.out.println("connection established !");
 
+
             Statement st = con.createStatement();
             ResultSet r = st.executeQuery(sql);
 
