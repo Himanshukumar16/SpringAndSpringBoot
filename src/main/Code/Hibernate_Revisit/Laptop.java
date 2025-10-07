@@ -5,6 +5,7 @@ import java.util.List;
 
 //@Embeddable
 @Entity
+@Cacheable(value = true)
 public class Laptop {
     @Id
     private int lid;

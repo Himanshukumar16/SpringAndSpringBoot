@@ -39,8 +39,8 @@ public class Main {
                 System.out.println("Enter Name of Person : ");
                 String name = sc.next();
 
-                Query<Contacts> q = s.createQuery("FROM Contacts WHERE name = :man", Contacts.class);
-                q.setParameter("man",name);
+                Query<Contacts> q = s.createQuery("FROM Contacts WHERE name = ?1", Contacts.class);
+                q.setParameter(1,name);
 
                 List<Contacts> l = q.list();
                 if (l.isEmpty()) System.out.println("No Record Found.");
